@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js --ext js,json,jsx --ignore ./sessions"
+    "dev": "nodemon app.js --ext js,json,jsx --ignore ./sessions",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",

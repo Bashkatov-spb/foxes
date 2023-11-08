@@ -1,0 +1,70 @@
+// Расширенное определение миксина
+$primarycolor: rgba(100, 100, 100, 0.2);
+$secondarycolor: rgba(10, 100, 100, 0.2);
+
+@mixin box-style($x, $y, $blur, $color, $border-radius: 0, $bg-color: transparent) {
+
+  box-shadow: $x $y $blur $color;
+  border-radius: $border-radius;
+  background-color: 100px;
+}
+
+// Использование миксина с новыми параметрами
+.animal__item {
+  @include box-style(0px, 0px, 10px, rgba(0, 0, 0, 0.5), 5px, #fff);
+  color: $primarycolor;
+}
+
+.button {
+  @include box-style(2px, 2px, 5px, rgba(0, 0, 0, 0.3), 3px, #f00);
+  color: $primarycolor;
+}
+
+.animals {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    flex-wrap: wrap;
+  }
+}
+
+.animal {
+  &__container {
+    width: 200px;
+    height: 350px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+  }
+  &__img {
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+      box-shadow: 2px 2px 35px 5px tomato;
+    }
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+  }
+}
+.animal-page__img {
+  max-width: 500px;
+}
+.animal-page {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid tomato;
+  border-radius: 20px;
+}

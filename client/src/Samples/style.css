@@ -1,0 +1,11 @@
+.flex-col {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col > div {
+  flex-basis: 50%;
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+}

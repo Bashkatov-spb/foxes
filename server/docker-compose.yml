@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/games
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: games
+    ports:
+      - '5432:5432' # Опционально: это откроет порт 5432 на хост-машине
+
+  app:
+    image: btn
+    depends_on:
+      - db
+    environment:
+      - DATABASE_HOST=db # Важно: здесь указывается хост базы данных
+      - DATABASE_PORT=5432
+    ports:
+      - '4000:3000'
